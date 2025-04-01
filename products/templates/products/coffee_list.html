@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee Store</title>
+</head>
+<body>
+    <h1>Welcome to the Coffee Store</h1>
+
+    {% if user.is_authenticated %}
+        <p>Hi, {{ user.username }} | <a href="{% url 'account_logout' %}">Logout</a></p>
+    {% else %}
+        <p><a href="{% url 'account_login' %}">Login</a> | <a href="{% url 'account_signup' %}">Register</a></p>
+    {% endif %}
+
+    <h2>Our Coffees</h2>
+    <ul>
+        {% for coffee in coffees %}
+            <li>
+                <strong>{{ coffee.name }}</strong> - {{ coffee.description }} - ${{ coffee.price }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
