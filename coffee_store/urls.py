@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', product_views.coffee_list, name='coffee_list'),
+     path('cart/', include('cart.urls')),
 ]
