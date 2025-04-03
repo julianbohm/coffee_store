@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Your Cart{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Your Cart</h1>
+
+    {% if cart_items %}
+        <ul class="list-group mb-3">
+            {% for item in cart_items %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ item.quantity }} x {{ item.coffee.name }}
+                    <span>${{ item.get_total_price }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+        <h4>Total: ${{ total }}</h4>
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %}
+
+    <a href="{% url 'coffee_list' %}" class="btn btn-secondary mt-3">Back to Store</a>
+{% endblock %}
