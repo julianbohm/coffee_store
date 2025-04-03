@@ -3,23 +3,25 @@
 {% block title %}Menu{% endblock %}
 
 {% block content %}
-    <h1 class="mb-4">Our Coffees</h1>
-    <div class="row">
-        {% for coffee in coffees %}
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ coffee.name }}</h5>
-                        <p class="card-text">{{ coffee.description }}</p>
-                        <p><strong>${{ coffee.price }}</strong></p>
-                        {% if user.is_authenticated %}
-                            <a href="{% url 'add_to_cart' coffee.id %}" class="btn btn-primary">Add to Cart</a>
-                        {% else %}
-                            <small>Please login to order</small>
-                        {% endif %}
-                    </div>
+<h1 class="mb-4">Our Coffee Selection</h1>
+<div class="row">
+    {% for coffee in coffees %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ coffee.name }}</h5>
+                    <p class="card-text">{{ coffee.description }}</p>
+                    <p class="card-text"><strong>${{ coffee.price }}</strong></p>
+                </div>
+                <div class="card-footer text-center">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'add_to_cart' coffee.id %}" class="btn btn-primary">Add to Cart</a>
+                    {% else %}
+                        <a href="{% url 'account_login' %}" class="btn btn-secondary">Login to Order</a>
+                    {% endif %}
                 </div>
             </div>
-        {% endfor %}
-    </div>
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}

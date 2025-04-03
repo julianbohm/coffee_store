@@ -1,15 +1,29 @@
 body {
-    background-color: #f8f9fa;
+    background-color: #f5f3f0;
 }
 
 h1, h4 {
-    color: #3e2723;
+    color: #4e342e;
 }
 
-.card {
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+.navbar {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.navbar-brand {
-    font-weight: bold;
+.card-img-top {
+    object-fit: cover;
+    height: 200px;
+}
+
+footer {
+    background: #2e2e2e;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    .card {
+        margin-bottom: 20px;
+    }
 }
