@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1> Purchase Complete!</h1>
+    <p>Thanks for your order, {{ user.username }}!</p>
+    <a href="{% url 'coffee_list' %}">Continue Shopping</a>
+{% endblock %}

@@ -11,10 +11,18 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 import os
+import environ
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY', default='')
+STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY', default='')
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,6 +35,7 @@ SECRET_KEY = 'django-insecure-4fhka1%n^1fwnu1b0j9@crma8=1$kp#4&333$1^m(8b0^^6jga
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
 
 
 # Application definition

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Your Cart{% endblock %}
 
@@ -15,6 +16,7 @@
             {% endfor %}
         </ul>
         <h4>Total: ${{ total }}</h4>
+        <a href="{% url 'checkout' %}" class="btn btn-success mt-3">Proceed to Checkout</a>
     {% else %}
         <p>Your cart is empty.</p>
     {% endif %}
