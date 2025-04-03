@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from products import views as product_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('', product_views.coffee_list, name='coffee_list'),
-     path('cart/', include('cart.urls')),
+    path('', include('products.urls')),
+    path('cart/', include('cart.urls')),
 ]
