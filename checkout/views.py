@@ -3,6 +3,7 @@ from django.conf import settings
 from django.shortcuts import render, redirect
 from cart.models import CartItem
 from .models import Order, OrderItem
+from django.urls import reverse
 
 # Create your views here.
 
@@ -40,8 +41,8 @@ def checkout(request):
         payment_method_types=['card'],
         line_items=line_items,
         mode='payment',
-        success_url=request.build_absolute_uri('/checkout/success/'),
-        cancel_url=request.build_absolute_uri('/cart/view/'),
+        success_url=request.build_absolute_uri(reverse('checkout_success')),
+        cancel_url=request.build_absolute_uri(reverse('view_cart')),
     )
 
     order.stripe_payment_intent = session.payment_intent
@@ -52,4 +53,7 @@ def checkout(request):
 
 def checkout_success(request):
     return render(request, 'checkout/success.html')
+
+def checkout_cancel(request):
+    return render(request, 'checkout/cancel.html')
 

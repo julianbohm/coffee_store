@@ -32,9 +32,9 @@ STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY', default='')
 SECRET_KEY = 'django-insecure-4fhka1%n^1fwnu1b0j9@crma8=1$kp#4&333$1^m(8b0^^6jga'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 

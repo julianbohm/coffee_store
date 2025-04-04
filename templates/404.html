@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Page Not Found{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+  <div class="text-center">
+    <h1 class="display-4">404 - Page Not Found</h1>
+    <p class="lead">The page you're looking for doesn't exist or was moved.</p>
+    <a href="{% url 'coffee_list' %}" class="btn btn-outline-dark mt-3">Back to Home</a>
+  </div>
+</div>
+{% endblock %}
