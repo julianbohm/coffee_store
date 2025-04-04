@@ -1,37 +1,49 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block title %}Your Cart{% endblock %}
 
 {% block content %}
-<h1 class="mb-4">Your Cart</h1>
+<div class="container my-5">
+    <h1 class="mb-4 text-center">Your Cart</h1>
 
-{% if cart_items %}
-    <ul class="list-group mb-3">
-        {% for item in cart_items %}
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <div>
-                    {{ item.quantity }} x {{ item.coffee.name }} - ${{ item.coffee.price }}
-                    <form method="post" action="{% url 'update_quantity' item.id %}" class="d-inline">
-                        {% csrf_token %}
-                        <input type="number" name="quantity" value="{{ item.quantity }}" min="1" style="width: 50px;">
-                        <button type="submit" class="btn btn-sm btn-primary">Update</button>
-                    </form>
-                </div>
-                <div>
-                    <span>Total: ${{ item.get_total_price }}</span>
-                    <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-sm btn-danger">Remove</a>
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
+    {% if cart_items %}
+        <ul class="list-group mb-3">
+            {% for item in cart_items %}
+                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <div class="d-flex align-items-center gap-3 flex-wrap">
+                        {% if item.coffee.image %}
+                            <img src="{{ item.coffee.image.url }}" class="cart-img" alt="{{ item.coffee.name }}">
+                        {% else %}
+                            <img src="{% static 'images/coffee_base.jpg' %}" class="cart-img" alt="Generic coffee">
+                        {% endif %}
+                        <div>
+                            <strong>{{ item.quantity }} x {{ item.coffee.name }}</strong><br>
+                            ${{ item.coffee.price }} each
+                            <form method="post" action="{% url 'update_quantity' item.id %}" class="d-flex gap-2 mt-2">
+                                {% csrf_token %}
+                                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" class="form-control form-control-sm w-auto">
+                                <button type="submit" class="btn btn-sm btn-outline-primary">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <span><strong>Total: ${{ item.get_total_price }}</strong></span><br>
+                        <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-sm btn-danger mt-2">Remove</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
 
-    <h4>Total: ${{ total }}</h4>
-    <a href="{% url 'checkout' %}" class="btn btn-success mt-3">Proceed to Checkout</a>
+        <div class="text-end">
+            <h4>Total: ${{ total }}</h4>
+            <a href="{% url 'checkout' %}" class="btn btn-success mt-3">Proceed to Checkout</a>
+        </div>
+    {% else %}
+        <p class="text-center">Your cart is empty.</p>
+    {% endif %}
 
-{% else %}
-    <p>Your cart is empty.</p>
-{% endif %}
-
-<a href="{% url 'coffee_list' %}" class="btn btn-secondary mt-3">Back to Store</a>
+    <div class="text-center mt-4">
+        <a href="{% url 'coffee_list' %}" class="btn btn-secondary">← Back to Store</a>
+    </div>
+</div>
 {% endblock %}

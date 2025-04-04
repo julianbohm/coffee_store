@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 import environ
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +35,7 @@ STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY', default='')
 SECRET_KEY = 'django-insecure-4fhka1%n^1fwnu1b0j9@crma8=1$kp#4&333$1^m(8b0^^6jga'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
@@ -53,7 +56,14 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'checkout',
+     'crispy_forms',
+    'crispy_bootstrap5',
+      'cloudinary',
+    'cloudinary_storage',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -150,8 +160,17 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env(deg8xwm3x),
+    'API_KEY': env(764859826352469),
+    'API_SECRET': env('-w0OD7rO1k1_64HQ1Xpaxd35aGURET'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

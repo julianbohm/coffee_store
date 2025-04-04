@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}Log out{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="text-center border rounded p-5 shadow bg-light">
+    <h2 class="mb-4">Are you sure you want to log out?</h2>
+    <form method="POST" action="{% url 'account_logout' %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger me-2">Logout</button>
+      <a href="{% url 'coffee_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}
