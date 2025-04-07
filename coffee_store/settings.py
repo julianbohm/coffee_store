@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import dj_database_url
 import os
+if os.path.isfile('env.py'):
+    import env
 import environ
 from pathlib import Path
 import cloudinary
@@ -32,12 +34,15 @@ STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY', default='')
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4fhka1%n^1fwnu1b0j9@crma8=1$kp#4&333$1^m(8b0^^6jga'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1',
+                 'localhost',
+                 'https://cafe-store-9cb38802a037.herokuapp.com/',
+]
 
 
 
@@ -113,13 +118,18 @@ WSGI_APPLICATION = 'coffee_store.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('postgresql://neondb_owner:sjCLE9SKxm6o@ep-flat-union-a22029iv.eu-central-1.aws.neon.tech/sling_move_lion_964506'))
     }
-}
+else: 
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
