@@ -121,7 +121,7 @@ WSGI_APPLICATION = 'coffee_store.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('postgresql://neondb_owner:sjCLE9SKxm6o@ep-flat-union-a22029iv.eu-central-1.aws.neon.tech/sling_move_lion_964506'))
+        'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
     }
 else: 
     DATABASES = {
