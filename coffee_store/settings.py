@@ -34,14 +34,14 @@ STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY', default='')
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['127.0.0.1',
                  'localhost',
-                 'https://cafe-store-9cb38802a037.herokuapp.com/',
+                 'cafe-store-9cb38802a037.herokuapp.com',
 ]
 
 
@@ -61,9 +61,9 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'checkout',
-     'crispy_forms',
+    'crispy_forms',
     'crispy_bootstrap5',
-      'cloudinary',
+    'cloudinary',
     'cloudinary_storage',
 ]
 
