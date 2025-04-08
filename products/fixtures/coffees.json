@@ -1,0 +1,272 @@
+[
+    {
+        "model": "products.coffee",
+        "pk": 1,
+        "fields": {
+            "name": "Coffee Brand 1",
+            "description": "Delicious coffee number 1 with rich flavor and aroma.",
+            "price": 8.75
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 2,
+        "fields": {
+            "name": "Coffee Brand 2",
+            "description": "Delicious coffee number 2 with rich flavor and aroma.",
+            "price": 9.0
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 3,
+        "fields": {
+            "name": "Coffee Brand 3",
+            "description": "Delicious coffee number 3 with rich flavor and aroma.",
+            "price": 9.25
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 4,
+        "fields": {
+            "name": "Coffee Brand 4",
+            "description": "Delicious coffee number 4 with rich flavor and aroma.",
+            "price": 9.5
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 5,
+        "fields": {
+            "name": "Coffee Brand 5",
+            "description": "Delicious coffee number 5 with rich flavor and aroma.",
+            "price": 9.75
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 6,
+        "fields": {
+            "name": "Coffee Brand 6",
+            "description": "Delicious coffee number 6 with rich flavor and aroma.",
+            "price": 10.0
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 7,
+        "fields": {
+            "name": "Coffee Brand 7",
+            "description": "Delicious coffee number 7 with rich flavor and aroma.",
+            "price": 10.25
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 8,
+        "fields": {
+            "name": "Coffee Brand 8",
+            "description": "Delicious coffee number 8 with rich flavor and aroma.",
+            "price": 10.5
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 9,
+        "fields": {
+            "name": "Coffee Brand 9",
+            "description": "Delicious coffee number 9 with rich flavor and aroma.",
+            "price": 10.75
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 10,
+        "fields": {
+            "name": "Coffee Brand 10",
+            "description": "Delicious coffee number 10 with rich flavor and aroma.",
+            "price": 11.0
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 11,
+        "fields": {
+            "name": "Coffee Brand 11",
+            "description": "Delicious coffee number 11 with rich flavor and aroma.",
+            "price": 11.25
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 12,
+        "fields": {
+            "name": "Coffee Brand 12",
+            "description": "Delicious coffee number 12 with rich flavor and aroma.",
+            "price": 11.5
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 13,
+        "fields": {
+            "name": "Coffee Brand 13",
+            "description": "Delicious coffee number 13 with rich flavor and aroma.",
+            "price": 11.75
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 14,
+        "fields": {
+            "name": "Coffee Brand 14",
+            "description": "Delicious coffee number 14 with rich flavor and aroma.",
+            "price": 12.0
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 15,
+        "fields": {
+            "name": "Coffee Brand 15",
+            "description": "Delicious coffee number 15 with rich flavor and aroma.",
+            "price": 12.25
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 16,
+        "fields": {
+            "name": "Coffee Brand 16",
+            "description": "Delicious coffee number 16 with rich flavor and aroma.",
+            "price": 12.5
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 17,
+        "fields": {
+            "name": "Coffee Brand 17",
+            "description": "Delicious coffee number 17 with rich flavor and aroma.",
+            "price": 12.75
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 18,
+        "fields": {
+            "name": "Coffee Brand 18",
+            "description": "Delicious coffee number 18 with rich flavor and aroma.",
+            "price": 13.0
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 19,
+        "fields": {
+            "name": "Coffee Brand 19",
+            "description": "Delicious coffee number 19 with rich flavor and aroma.",
+            "price": 13.25
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 20,
+        "fields": {
+            "name": "Coffee Brand 20",
+            "description": "Delicious coffee number 20 with rich flavor and aroma.",
+            "price": 13.5
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 21,
+        "fields": {
+            "name": "Coffee Brand 21",
+            "description": "Delicious coffee number 21 with rich flavor and aroma.",
+            "price": 13.75
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 22,
+        "fields": {
+            "name": "Coffee Brand 22",
+            "description": "Delicious coffee number 22 with rich flavor and aroma.",
+            "price": 14.0
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 23,
+        "fields": {
+            "name": "Coffee Brand 23",
+            "description": "Delicious coffee number 23 with rich flavor and aroma.",
+            "price": 14.25
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 24,
+        "fields": {
+            "name": "Coffee Brand 24",
+            "description": "Delicious coffee number 24 with rich flavor and aroma.",
+            "price": 14.5
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 25,
+        "fields": {
+            "name": "Coffee Brand 25",
+            "description": "Delicious coffee number 25 with rich flavor and aroma.",
+            "price": 14.75
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 26,
+        "fields": {
+            "name": "Coffee Brand 26",
+            "description": "Delicious coffee number 26 with rich flavor and aroma.",
+            "price": 15.0
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 27,
+        "fields": {
+            "name": "Coffee Brand 27",
+            "description": "Delicious coffee number 27 with rich flavor and aroma.",
+            "price": 15.25
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 28,
+        "fields": {
+            "name": "Coffee Brand 28",
+            "description": "Delicious coffee number 28 with rich flavor and aroma.",
+            "price": 15.5
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 29,
+        "fields": {
+            "name": "Coffee Brand 29",
+            "description": "Delicious coffee number 29 with rich flavor and aroma.",
+            "price": 15.75
+        }
+    },
+    {
+        "model": "products.coffee",
+        "pk": 30,
+        "fields": {
+            "name": "Coffee Brand 30",
+            "description": "Delicious coffee number 30 with rich flavor and aroma.",
+            "price": 16.0
+        }
+    }
+]
