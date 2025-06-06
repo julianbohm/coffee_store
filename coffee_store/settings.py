@@ -37,7 +37,8 @@ STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY', default='')
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = env.bool('DEBUG', default=False)
+
 
 ALLOWED_HOSTS = ['127.0.0.1',
                  'localhost',
@@ -119,16 +120,16 @@ WSGI_APPLICATION = 'coffee_store.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600, ssl_require=True)
-    }
-else: 
+if os.environ.get("DEVELOPMENT") == "1":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
         }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(env("DATABASE_URL"), conn_max_age=600, ssl_require=True)
     }
 
 
@@ -152,9 +153,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-ACCOUNT_EMAIL_REQUIRED = False
-
 
 
 # Internationalization
