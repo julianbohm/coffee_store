@@ -19,12 +19,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
-cloudinary.config( 
-  cloud_name = env('CLOUDINARY_CLOUD_NAME'), 
-  api_key = env('CLOUDINARY_API_KEY'), 
-  api_secret = env('CLOUDINARY_API_SECRET'),
-  secure = True
-)
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,6 +27,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+cloudinary.config( 
+  cloud_name = env('CLOUDINARY_CLOUD_NAME'), 
+  api_key = env('CLOUDINARY_API_KEY'), 
+  api_secret = env('CLOUDINARY_API_SECRET'),
+  secure = True
+)
 
 STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY', default='')
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY', default='')
